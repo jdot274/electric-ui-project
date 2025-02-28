@@ -27,3 +27,15 @@ To continue developing with Electric UI:
 4. **Build and deploy** - Use `arc build` when ready to create a distributable application
 
 The application is currently running in development mode. You can access it through the Electron window that opened when you ran `arc start`.
+
+## Git Repository Setup
+
+I've set up version control for this project:
+
+1. **Initialized a git repository** in the project directory
+2. **Added all project files** to the repository
+3. **Created an initial commit** with all project files
+4. **Created a GitHub repository** at https://github.com/jdot274/electric-ui-project
+5. **Pushed the local repository** to GitHub
+
+The project is now fully version-controlled and hosted on GitHub, making it easy to track changes, collaborate with others, and deploy updates.
