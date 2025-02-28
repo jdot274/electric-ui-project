@@ -6,6 +6,7 @@ import { Intent } from '@blueprintjs/core'
 import { OverviewPage } from './OverviewPage'
 import React from 'react'
 import { SecondaryPage } from './SecondaryPage'
+import { FloatingUIPage } from './FloatingUIPage'
 import { navigate } from '@electricui/utility-electron'
 
 interface InjectDeviceIDFromLocation {
@@ -38,6 +39,7 @@ export const DevicePages = (
           <Router primary={false}>
             <OverviewPage path="/" />
             <SecondaryPage path="secondary" />
+            <FloatingUIPage path="floating-ui" />
           </Router>
         </div>
       </div>
