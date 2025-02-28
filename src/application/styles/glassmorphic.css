@@ -1,0 +1,229 @@
+/* Glassmorphic Design System
+ * A comprehensive collection of modern glass-effect styles
+ * Implemented in CSS, Tailwind, and PostCSS
+ */
+
+/* Base Glass Effects */
+.glass-base {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Tailwind class: bg-glass */
+@layer components {
+  .bg-glass {
+    @apply bg-white/10 backdrop-blur-lg border border-white/10 shadow-lg;
+  }
+}
+
+/* Glass Enhancements */
+.glass-frosted {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Tailwind class: glass-frosted */
+@layer components {
+  .glass-frosted {
+    @apply bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl backdrop-saturate-180 border border-white/15;
+  }
+}
+
+/* Holographic Effects */
+.glass-holographic {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.05)
+  );
+  backdrop-filter: blur(10px) hue-rotate(20deg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-holographic::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  animation: holographic-rotate 20s linear infinite;
+}
+
+/* Animations */
+@keyframes holographic-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glow-pulse {
+  0% { box-shadow: 0 0 20px rgba(var(--glow-color), 0.5); }
+  50% { box-shadow: 0 0 40px rgba(var(--glow-color), 0.7); }
+  100% { box-shadow: 0 0 20px rgba(var(--glow-color), 0.5); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* Particle Effects */
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Dark Theme with Glass */
+.glass-dark {
+  background: linear-gradient(135deg, #1a1f35 0%, #2d1a42 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 100px rgba(103, 76, 255, 0.1),
+    0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+/* Tailwind class: glass-dark */
+@layer components {
+  .glass-dark {
+    @apply bg-gradient-to-br from-[#1a1f35] to-[#2d1a42] backdrop-blur-2xl border border-white/10 shadow-2xl;
+  }
+}
+
+/* Glass Borders and Edges */
+.glass-border {
+  position: relative;
+}
+
+.glass-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+}
+
+/* Gradient Overlays */
+.glass-gradient-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(103, 76, 255, 0.05),
+    rgba(103, 76, 255, 0.1)
+  );
+  backdrop-filter: blur(10px);
+}
+
+/* Tailwind class: glass-gradient */
+@layer components {
+  .glass-gradient {
+    @apply bg-gradient-to-br from-purple-500/5 to-purple-500/10 backdrop-blur-lg;
+  }
+}
+
+/* Glass Card Styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.2),
+    0 0 1px rgba(255, 255, 255, 0.15) inset;
+}
+
+/* Tailwind class: glass-card */
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg rounded-2xl p-5 border border-white/10 
+           transition-all duration-300 ease-in-out
+           hover:transform hover:-translate-y-0.5 hover:shadow-xl;
+  }
+}
+
+/* PostCSS Custom Properties */
+:root {
+  --glass-blur: 10px;
+  --glass-saturation: 180%;
+  --glass-opacity: 0.1;
+  --glass-border-opacity: 0.1;
+  --glass-shadow-opacity: 0.1;
+  --glass-gradient-start: rgba(255, 255, 255, 0.1);
+  --glass-gradient-end: rgba(255, 255, 255, 0.05);
+}
+
+/* PostCSS Custom Selectors */
+@custom-selector :--glass-hover :hover, :focus;
+@custom-selector :--glass-active :active;
+
+/* PostCSS Nesting Example */
+.glass {
+  background: var(--glass-gradient-start);
+  backdrop-filter: blur(var(--glass-blur));
+  
+  &:--glass-hover {
+    --glass-blur: 20px;
+    --glass-opacity: 0.15;
+  }
+  
+  &:--glass-active {
+    --glass-blur: 15px;
+    --glass-opacity: 0.12;
+  }
+}
+
+/* Utility Classes */
+.backdrop-blur-sm { backdrop-filter: blur(4px); }
+.backdrop-blur-md { backdrop-filter: blur(8px); }
+.backdrop-blur-lg { backdrop-filter: blur(12px); }
+.backdrop-blur-xl { backdrop-filter: blur(16px); }
+.backdrop-blur-2xl { backdrop-filter: blur(24px); }
+
+.glass-border-light { border: 1px solid rgba(255, 255, 255, 0.1); }
+.glass-border-medium { border: 1px solid rgba(255, 255, 255, 0.15); }
+.glass-border-strong { border: 1px solid rgba(255, 255, 255, 0.2); }
+
+.glass-shadow-sm { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+.glass-shadow-md { box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); }
+.glass-shadow-lg { box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
+.glass-shadow-xl { box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); }
