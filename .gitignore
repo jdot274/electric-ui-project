@@ -1,0 +1,99 @@
+# Node.js dependencies
+node_modules/
+node_modules.bak/
+.pnp/
+.pnp.js
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build output
+/build/
+/dist/
+/.out/
+
+# Electron binary files
+*.exe
+*.dmg
+*.app
+*.pkg
+*.appimage
+Electron.app/
+Electron Framework.framework/
+
+# Environment and configuration
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug logs
+logs/
+*.log
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor specific
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-workspace
+*.swp
+*.swo
+
+# Testing
+/coverage/
+/.nyc_output
+
+# Backup and temp files
+*.bak
+*.tmp
+*.temp
+*~
+backup-*/
+temp-backup/
+
+# Backup projects and archives
+electric-ui-project-backup-march-1-2025.tar.gz
+electric-ui-backup-march-1-2025/
+backup-march-1-2025/
+neo4j-backup*/
+
+# Large image files
+*.psd
+*.ai
+*.sketch
+*.fig
+*.xd
+*.mp4
+*.webm
+*.mov
+*.avi
+
+# Archives
+*.zip
+*.rar
+*.7z
+*.gz
+*.tar
+*.tar.gz
+
+# Specific project directories
+/Users/
+/chat-exports/
+/component-sandbox/node_modules.bak/
+/neo4j-knowledge-graph/
+/temp-vite-project/
+/universal-context-system/
+/virtual-env-test/

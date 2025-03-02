@@ -1,0 +1,87 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.pnp/
+.pnp.js
+
+# Build output
+/build/
+/dist/
+/.out/
+
+# Electron binary files
+*.exe
+*.dmg
+*.app
+*.pkg
+*.appimage
+Electron.app/
+Electron Framework.framework/
+
+# Environment and configuration
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug logs
+logs/
+*.log
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor specific
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-workspace
+*.swp
+*.swo
+
+# Testing
+/coverage/
+/.nyc_output
+
+# Backup and temp files
+*.bak
+*.tmp
+*.temp
+*~
+backup-*/
+
+# Large binary files
+*.psd
+*.ai
+*.sketch
+*.fig
+*.xd
+*.pdf
+*.mp4
+*.webm
+*.mov
+*.avi
+
+# Archives (these should be stored elsewhere, not in git)
+*.zip
+*.rar
+*.7z
+*.gz
+*.tar
+*.tar.gz
+
+# Dependency lock backup
+package-lock.json.bak
+yarn.lock.bak
