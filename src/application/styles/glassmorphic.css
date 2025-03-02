@@ -1,6 +1,7 @@
-/* Glassmorphic Design System
+/* 
+ * Glassmorphic Design System
  * A comprehensive collection of modern glass-effect styles
- * Implemented in CSS, Tailwind, and PostCSS
+ * Implemented in CSS Tailwind and PostCSS
  */
 
 /* Base Glass Effects */
@@ -105,7 +106,7 @@
   background: linear-gradient(135deg, #1a1f35 0%, #2d1a42 100%);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
+  box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.4),
     0 0 100px rgba(103, 76, 255, 0.1),
     0 0 1px rgba(255, 255, 255, 0.1) inset;
@@ -167,7 +168,7 @@
 
 .glass-card:hover {
   transform: translateY(-2px);
-  box-shadow: 
+  box-shadow:
     0 12px 24px rgba(0, 0, 0, 0.2),
     0 0 1px rgba(255, 255, 255, 0.15) inset;
 }
@@ -175,7 +176,7 @@
 /* Tailwind class: glass-card */
 @layer components {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-lg rounded-2xl p-5 border border-white/10 
+    @apply bg-white/5 backdrop-blur-lg rounded-2xl p-5 border border-white/10
            transition-all duration-300 ease-in-out
            hover:transform hover:-translate-y-0.5 hover:shadow-xl;
   }
@@ -200,12 +201,12 @@
 .glass {
   background: var(--glass-gradient-start);
   backdrop-filter: blur(var(--glass-blur));
-  
+
   &:--glass-hover {
     --glass-blur: 20px;
     --glass-opacity: 0.15;
   }
-  
+
   &:--glass-active {
     --glass-blur: 15px;
     --glass-opacity: 0.12;

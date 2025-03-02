@@ -1,8 +1,17 @@
 {
   "compilerOptions": {
     "target": "ES2021",
-    "module": "esnext",
-    "moduleResolution": "node",
+    "useDefineForClassFields": true,
+    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
@@ -11,12 +20,17 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "newLine": "lf",
-    "jsx": "react",
     "noEmitOnError": true,
     "baseUrl": ".",
     "paths": {
-      "*": ["*", "packages/*"]
+      "@/*": ["src/*"],
+      "@application/*": ["src/application/*"],
+      "@components/*": ["src/application/components/*"],
+      "@styles/*": ["src/application/styles/*"],
+      "@pages/*": ["src/application/pages/*"],
+      "*": ["*", "packages/*", "node_modules/*"]
     }
   },
-  "include": ["src/**/*.tsx", "typings/*.d.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "typings/*.d.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
