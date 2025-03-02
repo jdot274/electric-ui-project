@@ -17,7 +17,7 @@ import {
   useClick,
   useMergeRefs,
   inline,
-  Placement,
+  Placement
 } from '@floating-ui/react';
 import styled, { keyframes } from 'styled-components';
 
@@ -36,7 +36,7 @@ const CardContainer = styled.div<{ $isInteractive: boolean }>`
   width: 300px;
   cursor: ${props => props.$isInteractive ? 'pointer' : 'default'};
   transition: all 0.3s ease;
-  
+
   &:hover {
     transform: ${props => props.$isInteractive ? 'translateY(-2px)' : 'none'};
     box-shadow: ${props => props.$isInteractive ? '0 15px 30px -5px rgba(79, 70, 229, 0.4)' : '0 10px 25px -5px rgba(79, 70, 229, 0.3)'};
@@ -124,7 +124,7 @@ export const FloatingCard: React.FC<FloatingCardProps> = ({
   trigger,
   onAction,
   actionLabel = 'Learn More',
-  openOnHover = false,
+  openOnHover = false
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const arrowRef = useRef(null);
@@ -136,7 +136,7 @@ export const FloatingCard: React.FC<FloatingCardProps> = ({
     refs,
     context,
     middlewareData,
-    placement: finalPlacement,
+    placement: finalPlacement
   } = useFloating({
     placement,
     open: isOpen,
@@ -145,31 +145,31 @@ export const FloatingCard: React.FC<FloatingCardProps> = ({
       offset(12),
       flip({
         fallbackAxisSideDirection: 'end',
-        padding: 8,
+        padding: 8
       }),
       shift({ padding: 8 }),
       inline(),
       size({
         apply({ availableWidth, elements }) {
           Object.assign(elements.floating.style, {
-            maxWidth: `${availableWidth}px`,
+            maxWidth: `${availableWidth}px`
           });
         },
-        padding: 8,
+        padding: 8
       }),
-      showArrow && arrow({ element: arrowRef }),
+      showArrow && arrow({ element: arrowRef })
     ].filter(Boolean),
-    whileElementsMounted: autoUpdate,
+    whileElementsMounted: autoUpdate
   });
 
   const hover = useHover(context, {
     enabled: openOnHover,
-    delay: { open: 75, close: 150 },
+    delay: { open: 75, close: 150 }
   });
   const focus = useFocus(context);
   const dismiss = useDismiss(context);
   const click = useClick(context, {
-    enabled: !openOnHover,
+    enabled: !openOnHover
   });
   const role = useRole(context, { role: 'dialog' });
 
@@ -178,22 +178,22 @@ export const FloatingCard: React.FC<FloatingCardProps> = ({
     focus,
     dismiss,
     click,
-    role,
+    role
   ]);
 
   const { isMounted, styles } = useTransitionStyles(context, {
     initial: {
       opacity: 0,
-      transform: 'scale(0.95)',
+      transform: 'scale(0.95)'
     },
     open: {
       opacity: 1,
-      transform: 'scale(1)',
+      transform: 'scale(1)'
     },
     close: {
       opacity: 0,
-      transform: 'scale(0.95)',
-    },
+      transform: 'scale(0.95)'
+    }
   });
 
   return (
@@ -201,7 +201,7 @@ export const FloatingCard: React.FC<FloatingCardProps> = ({
       {trigger ? (
         React.cloneElement(trigger as React.ReactElement, {
           ref: refs.setReference,
-          ...getReferenceProps(),
+          ...getReferenceProps()
         })
       ) : (
         <TriggerButton ref={refs.setReference} {...getReferenceProps()}>
@@ -215,7 +215,7 @@ export const FloatingCard: React.FC<FloatingCardProps> = ({
             position: strategy,
             top: y ?? 0,
             left: x ?? 0,
-            ...styles,
+            ...styles
           }}
           $isInteractive={interactive}
           {...getFloatingProps()}

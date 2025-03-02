@@ -86,7 +86,7 @@ export const FloatingDemo: React.FC = () => {
     { id: '2', label: 'Settings', onClick: () => console.log('Settings') },
     { id: 'divider1', isDivider: true },
     { id: '3', label: 'Help Center', onClick: () => console.log('Help Center') },
-    { id: '4', label: 'Logout', onClick: () => console.log('Logout') },
+    { id: '4', label: 'Logout', onClick: () => console.log('Logout') }
   ];
 
   return (
