@@ -1,0 +1,63 @@
+{
+  "name": "component-sandbox",
+  "version": "0.1.0",
+  "description": "Sandbox environment for testing UI components",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "concurrently \"webpack serve --mode development\" \"wait-on http://localhost:9001 && electron .\"",
+    "build": "webpack --mode production && electron-builder",
+    "scan-deps": "node scripts/scan-dependencies.js"
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.26.28",
+    "@floating-ui/react-dom": "^2.1.2",
+    "electron-is-dev": "^2.0.0",
+    "electron-reload": "^1.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
+    "@types/node": "^20.10.5",
+    "@types/react": "^17.0.74",
+    "@types/react-dom": "^17.0.25",
+    "babel-loader": "^8.0.4",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.3",
+    "electron": "^26.3.0",
+    "electron-builder": "^24.6.3",
+    "electron-devtools-installer": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "wait-on": "^7.2.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "build": {
+    "appId": "com.joeywalter.component-sandbox",
+    "productName": "Component Sandbox",
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "mac": {
+      "target": "dmg"
+    }
+  },
+  "overrides": {
+    "inflight": "npm:lru-cache@^7.14.1",
+    "rimraf": "^4.4.1"
+  }
+}
